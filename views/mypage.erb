@@ -1,0 +1,17 @@
+<section id="section">
+ <div class="sign-container">
+
+<div><h1 class="section-title form-title">My<span>page</span></h1></div>
+<p class="mypage-p">トレーニングのタイムテーブルから興味のあるレッスンを<br>選んで参加してみましょう。</p>
+ <div class="calendar">
+ <iframe src="https://calendar.google.com/calendar/embed?src=wellgosd%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+ </div>
+
+  <% if session[:user] %>
+    <form action="/signout" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <div class="signout-form-button"><input type="submit" value="サインアウト"></div>
+    </form>
+  <% end %>
+ </div>
+</section>

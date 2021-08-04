@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-FREE| 完全オンラインのパーソナルトレーニング</title> <!-- ここは各自の好きなように！ -->
+<!-- headタグの中 -->
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+ </head>
+ <body>
+    <!--Header-->
+  <section id="header">
+   <div class="header container">
+    <div class="nav-bar">
+      <div class="brand">
+       <a href="http://localhost:4567/index.erb"><h1><span>T</span>-f<span>r</span>ee</h1></a>
+      </div>
+      <div class="nav-list">
+       <div class="hamburger"><div class="bar"></div></div>
+       <ul>
+        <li><a href="http://localhost:4567/index.erb#services" data-after="Features">Features</a></li>
+        <li><a href="http://localhost:4567/index.erb#projects" data-after="Services">Services</a></li>
+        <li><a href="http://localhost:4567/index.erb#about" data-after="About">About</a></li>
+        <li><a href="http://localhost:4567/index.erb#contact" data-after="Contact">Contact</a></li>
+        <li class="header-cta"><a href="/signin" data-after="Login"><span>Login</span></a></li>
+       </ul>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <%= yield %>
+
+   <!--Footer-->
+ <section id="footer">
+  <div class="footer container">
+   <div class="brand"><h1><span>T</span>-F<span>R</span>EE</h1></div>
+   <h2>Your Complete Workout Solution</h2>
+   <div class="social-icon">
+    <div class="social-item">
+     <a href="#"><img src="../images/facebook.png" alt="icon"></a>
+    </div>
+    <div class="social-item">
+     <a href="#"><img src="../images/youtube.png" alt="icon"></a>
+    </div>
+    <div class="social-item">
+     <a href="#"><img src="../images/instagram.png" alt="icon"></a>
+    </div>
+    <div class="social-item">
+     <a href="#"><img src="../images/pinterest.png" alt="icon"></a>
+    </div>
+   </div>
+   <p>Copyright &copy; T-free All rights reserved</p>
+  </div>
+ </section>
+ <!--Go to top-->
+    <div id="page_top"><a href="#">⬆︎</a></div>
+    <!--Go to top-->
+<script>
+  $(function(){
+    var pagetop = $('#page_top');
+    //ボタン非表示
+    pagetop.hide();
+    // 80px スクロールで表示
+    $(window).scroll(function (){
+      if ($(this).scrollTop() > 80) {
+        pagetop.fadeIn();
+      } else {
+        pagetop.fadeOut();
+      }
+    });
+    pagetop.click(function(){
+      $('body, html').animate({ scrollTop: 0},500);
+      return false;
+    });
+  });
+  </script>
+ </body>
+
+<!-- bodyタグの下 -->
+<script src="/js/custom.js"></script>
+    <script src='/js/bootstrap.bundle.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src='/js/bootstrap.min.js'></script>
+</html>
